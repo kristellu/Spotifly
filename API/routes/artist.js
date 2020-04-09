@@ -3,7 +3,7 @@
 var express = require ('express');
 var ArtistController = require('../controllers/artist'); //carga ruta de fichero
 var api = express.Router(); //permite crear ruta para la api 
-var md_auth = require('../middlewares/authenticated');
+var md_auth = require('../middleware/authenticate');
 
 var multipart = require('connect-multiparty');
 var md_upload = multipart({ uploadDir: './uploads/artists' });
