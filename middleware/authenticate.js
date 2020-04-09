@@ -14,10 +14,10 @@ exports.ensureAuth = function(req, res, next){
     try{
         var payload = jwt.decode(token, secret);
         if(payload.exp <= moment().unix()){
-            return res.status(401).send({message: 'Token explirado'});
+            return res.status(401).send({message: 'Token expirado'});
         }
     }catch(ex){
-        console.log(ex);
+       // console.log(ex);
         return res.status(404).send({message: 'Token invalido'})
 
     }
